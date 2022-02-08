@@ -24,6 +24,7 @@ const routes = [
     path: "/contact/:id",
     name: "ContactDetails",
     component: ContactDetails,
+    props: true,
   },
 ];
 
