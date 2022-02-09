@@ -25,5 +25,12 @@ export default {
       ],
     };
   },
+  mounted() {
+    fetch("https://disease.sh/v3/covid-19/all")
+      .then((res) => res.json())
+      // .then((data) => this.contact = data)
+      .then((data) => console.log(data))
+      .catch((err) => console.log(err.message));
+  },
 };
 </script>
