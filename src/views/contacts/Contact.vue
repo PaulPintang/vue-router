@@ -10,6 +10,7 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
   data() {
     return {
@@ -26,11 +27,14 @@ export default {
     };
   },
   mounted() {
-    fetch("https://disease.sh/v3/covid-19/all")
-      .then((res) => res.json())
-      // .then((data) => this.contact = data)
-      .then((data) => console.log(data))
-      .catch((err) => console.log(err.message));
+    // fetch("https://api.coindesk.com/v1/bpi/currentprice.json")
+    //   .then((res) => res.json())
+    //   // .then((data) => this.contact = data)
+    //   .then((data) => console.log(data))
+    //   .catch((err) => console.log(err.message));
+    axios
+      .get("https://disease.sh/v3/covid-19/all")
+      .then((res) => console.log(res));
   },
 };
 </script>
